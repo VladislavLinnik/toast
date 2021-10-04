@@ -1,0 +1,95 @@
+:host {
+  display: block;
+  background: #fff;
+  box-shadow: 0px 0px 10px 1px black;
+  border-radius: 10px;
+
+  &:not(:first-child) {
+    margin-top: 20px;
+  }
+}
+
+.close {
+  cursor: pointer;
+  font-size: 30px;
+}
+
+@keyframes openToaster {
+  from {
+    min-height: 0;
+    height: 0;
+    width: 0;
+    left: 50%;
+  }
+  50% {
+    width: 100%;
+    left: 0;
+  }
+  75% {
+    height: 0;
+    min-height: 0;
+  }
+  to {
+    min-height: 50px;
+  }
+}
+
+.toast {
+  height: 50px;
+  border-radius: 9px;
+  transition: width 0.5s ease,
+  height 0.5s ease 0.5s,
+  top 0.5s ease 0.5s;
+  display: flex;
+  align-items: center;
+  animation: openToaster 0.5s ease;
+
+  .icon-wrap {
+    color: #fff;
+    width: 75px;
+    height: 100%;
+    display: flex;
+    align-self: center;
+    justify-content: center;
+
+    > i {
+      color: #000;
+      font-size: 20px;
+    }
+  }
+}
+
+.toast-content-text {
+  font-family: 'Consolas', arial, sans-serif;
+  font-size: 1.5em;
+}
+
+.toast.error {
+  border: 1.5px solid red;
+  .icon-wrap {
+    background: red;
+  }
+  .toast-content-text {
+    color: red;
+  }
+}
+
+.toast.success {
+  border: 1.5px solid green;
+  .icon-wrap {
+    background: green;
+  }
+  .toast-content-text {
+    color: green;
+  }
+}
+
+.toast.warning {
+  border: 1px solid orange;
+  .icon-wrap {
+    background: orange;
+  }
+  .toast-content-text {
+    color: orange;
+  }
+}

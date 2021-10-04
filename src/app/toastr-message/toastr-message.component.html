@@ -1,0 +1,17 @@
+<div class="toast"
+     [class.error]="isEqualMessageType(MESSAGE_TYPE.ERROR)"
+     [class.success]="isEqualMessageType(MESSAGE_TYPE.SUCCESS)"
+     [class.info]="isEqualMessageType(MESSAGE_TYPE.INFO)"
+     [class.warning]="isEqualMessageType(MESSAGE_TYPE.WARNING)">
+  <span class="close" (click)="closeToast()">X</span>
+  <div class="icon-wrap">
+    <i class="fa"
+       [class.fa-check]="isEqualMessageType(MESSAGE_TYPE.SUCCESS)"
+       [class.fa-times]="isEqualMessageType(MESSAGE_TYPE.ERROR)"
+       [class.info]="isEqualMessageType(MESSAGE_TYPE.INFO)"
+       [class.fa-exclamation-triangle]="isEqualMessageType(MESSAGE_TYPE.WARNING)"></i>
+  </div>
+  <div class="toast-content-text">
+    <span class="text-break">{{ toastr.message }}</span>
+  </div>
+</div>

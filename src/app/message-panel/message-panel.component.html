@@ -1,0 +1,5 @@
+<app-toastr-message *ngFor="let toastr of toastrs; trackBy: toastrById"
+                    @closeToaster
+                    [toastr]="toastr"
+                    (closed)="onClosed($event)">
+</app-toastr-message>
